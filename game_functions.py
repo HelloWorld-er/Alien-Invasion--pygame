@@ -9,7 +9,7 @@ import preprocessing
 
 
 def update_high_score_history_data(stats):
-	with open("../All-in-One/Alien Invasion/users_data.json", "r+") as users_data_file:
+	with open("users_data.json", "r+") as users_data_file:
 		users_data_list = json.load(users_data_file)
 		for user_data in users_data_list:
 			if user_data[0] == stats.user:
@@ -17,7 +17,7 @@ def update_high_score_history_data(stats):
 				users_data_file.seek(0, 0)
 				json.dump(users_data_list, users_data_file)
 				break
-	with open("../All-in-One/Alien Invasion/high_score_data.json", "w") as high_score_data_file:
+	with open("high_score_data.json", "w") as high_score_data_file:
 		json.dump({"user": stats.user, "high score": stats.high_score_history}, high_score_data_file)
 
 
@@ -117,7 +117,7 @@ def check_button(ai_settings, screen, stats, introduction_of_game, next_button, 
 			stats.user = user_input_text.text
 			score_board.prep_user()
 			already_registered = False
-			with open("../All-in-One/Alien Invasion/users_data.json", "r+") as users_data_file:
+			with open("users_data.json", "r+") as users_data_file:
 				users_data_list = json.load(users_data_file)
 				if users_data_list != []:
 					for user_data in users_data_list:
