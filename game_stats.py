@@ -19,7 +19,7 @@ class GameStats():
 		
 		self.user = None
 		
-		with open("../All-in-One/Alien Invasion/high_score_data.json", 'r') as high_score_data_file:
+		with open("high_score_data.json", 'r') as high_score_data_file:
 			high_score_data = json.load(high_score_data_file)
 			if 'high score' in high_score_data:
 				self.high_score_history = high_score_data['high score']
